@@ -266,7 +266,6 @@ weight = 53
 format = "https://vine.co/%v"
 icon = "fab fa-vine"
 
-
 [researchgate]
 weight = 55
 format = "https://www.researchgate.net/profile/%v"

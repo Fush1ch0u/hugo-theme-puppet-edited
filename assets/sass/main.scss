@@ -152,7 +152,7 @@ samp {
   a {
     // display: inline-block;
     // safari has bugs on word-break on inline elements.
-    color: #337ab7;
+    color: #597c5a;
     // different to $brand-primary
     &:hover,
     &:focus {
@@ -251,7 +251,7 @@ samp {
   }
   // V1.6 Hux display title by default.
   .pager li {
-    width: 48%;
+    width: 50%;
     &.next {
       float: right;
     }
@@ -259,8 +259,9 @@ samp {
       float: left;
     }
     > a {
-      width: 100%;
+      width: 60%;
       > span {
+        display: none;
         color: $brand-gray;
         font-weight: normal;
         letter-spacing: 0.5px;
@@ -564,7 +565,7 @@ samp {
     .site-heading,
     .post-heading,
     .page-heading {
-      padding: 85px 0 20px;
+      padding: 85px 0 10px;
       color: $gray-dark;
       .subheading {
         margin-bottom: 15px;
@@ -573,9 +574,12 @@ samp {
     .tags {
       a,
       .tag {
-        border-color: $gray-dark;
-        color: $gray-dark;
-        &:hover,
+        border-color: $brand-primary;
+        color: $brand-primary;
+        &:hover {
+          background-color: $brand-primary;
+          color:#fff;
+        }
         &:active {
           background-color: rgba(0, 0, 0, 0.05);
         }
@@ -601,6 +605,7 @@ samp {
     }
   }
   // masterialize
+  // heading的排佈及大小調整
   .site-heading {
     padding: 95px 0 70px;
     @media only screen and (min-width: 768px) {
@@ -609,9 +614,9 @@ samp {
   }
   .site-heading,
   .page-heading {
-    text-align: center;
+    text-align: left;
     h1 {
-      margin-top: 0;
+      margin-top: 50px;
       font-size: 50px;
     }
     .subheading {
@@ -622,15 +627,17 @@ samp {
       font-weight: 300;
       margin: 10px 0 0;
     }
+
+    // 標題大小設置 
     @media only screen and (min-width: 768px) {
       h1 {
-        font-size: 80px;
+        font-size: 60px;
       }
     }
   }
   .post-heading {
     h1 {
-      font-size: 30px;
+      font-size: 25px;
       margin-bottom: 24px;
     }
     .subheading,
@@ -782,8 +789,10 @@ samp {
   border-bottom-left-radius: 5px;
 }
 
+
+// 底部圖標大小
 footer {
-  font-size: 20px;
+  font-size: 14px;
   padding: 50px 0 65px;
   .list-inline {
     margin: 0;
@@ -794,7 +803,7 @@ footer {
     text-align: center;
     margin-bottom: 0;
     a {
-      color: #337ab7;
+      color: #316e2a;
       // different to $brand-primary
       &:hover,
       &:focus {
@@ -803,6 +812,8 @@ footer {
     }
   }
 }
+
+
 // Button Styles
 
 .btn {
@@ -825,7 +836,7 @@ footer {
   &:focus {
     background-color: $brand-primary;
     border: 1px solid $brand-primary;
-    color: white;
+    color: rgb(226, 225, 225);
   }
 }
 
@@ -841,6 +852,7 @@ footer {
       @include sans-serif;
       text-transform: uppercase;
       font-size: 13px;
+      line-height:1.7;
       font-weight: 800;
       letter-spacing: 1px;
       padding: 10px;
@@ -905,6 +917,7 @@ img::-moz-selection {
 }
 
 /* Hux add tags support */
+/* 標籤顏色修改等等*/
 .d-none {
   display: none !important;
 }
@@ -920,9 +933,9 @@ img::-moz-selection {
   .tag {
     display: inline-block;
     border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 999em;
+    border-radius: 30px;
     padding: 0 10px 0 10px;
-    color: rgba(255, 255, 255, 1);
+    color: #fff;
     line-height: 24px;
     font-size: 12px;
     text-decoration: none;
@@ -936,7 +949,7 @@ img::-moz-selection {
     &:hover,
     &:active {
       color: white;
-      border-color: white;
+      border-color: #f3f5f5;
       background-color: rgba(255, 255, 255, 0.4);
       text-decoration: none;
     }
@@ -945,14 +958,15 @@ img::-moz-selection {
     }
   }
 }
-
+// 除首頁外的背景圖高度設置
 #tag-heading {
   padding: 70px 0 60px;
   @media only screen and (min-width: 768px) {
-    padding: 55px 0;
+    padding: 150px 0;
   }
 }
 // tag_cloud
+// 歸檔頁tag顏色設置！
 #tag_cloud {
   margin: 20px 0 15px 0;
   a,
@@ -961,27 +975,33 @@ img::-moz-selection {
     transition-duration: 0.4s;
     transition-timing-function: ease;
     font-size: 14px;
-    border: none;
+    border: 1px solid rgba(228, 228, 228,0.7) !important;
     line-height: 28px;
-    margin: 0 2px;
+    margin: 0 8px;
     margin-bottom: 8px;
-    background: #f3f5f5;
-    &:hover,
+    background-color: #f3f5f5 !important;
+    color: #316e2a;
+    &:hover {
+      background-color: #597c5a !important;
+      color: #fff;}
     &:active,
     &.focus {
-      background-color: #0085a1 !important;
+      background-color: #316e2a !important;
+      color: #fff !important;
     }
     &.focus {
       box-shadow: rgba(0, 0, 0, 0.117647) 0 1px 6px,
         rgba(0, 0, 0, 0.239216) 0 1px 4px;
     }
     &.tag-button--all {
-      font-weight: 700;
-      color: #0085a1 !important;
+      font-weight: 800;
+      color: #316e2a !important;
+      border: 1px solid rgba(228, 228, 228,0.7) !important;
       &:hover,
       &:active,
       &.focus {
         background-color: #e4e4e4 !important;
+        border: 1px solid rgba(228, 228, 228,0.7) !important;
       }
     }
   }
@@ -1007,7 +1027,7 @@ img::-moz-selection {
   }
 }
 .listing-seperator {
-  color: #0085a1;
+  color: #316e2a;
   font-size: 21px !important;
   &::before {
     margin-right: 5px;
@@ -1064,6 +1084,7 @@ img::-moz-selection {
 }
 
 /* Tags support End*/
+
 
 /* Hux make all img responsible in post-container */
 .post-container img {

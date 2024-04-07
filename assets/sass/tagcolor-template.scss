@@ -1,5 +1,7 @@
-$start-color: #bbbbee;
-$end-color: #2f93b4;
+@import "_variables.scss";
+
+$start-color: #f3f5f5;
+$end-color: #597c5a;
 $spread: {{ .spread }};
 $weighting: {{ .weighting }};
 @function tagColor() {
